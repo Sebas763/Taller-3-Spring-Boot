@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# Taller #3 — Full Stack App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación full stack que conecta una base de datos MySQL con un backend en Spring Boot y un frontend en React, mostrando usuarios y productos almacenados en la base de datos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologías
 
-## React Compiler
+| Capa | Tecnología |
+|------|-----------|
+| Frontend | React + Vite + TypeScript |
+| Backend | Java + Spring Boot |
+| Base de Datos | MySQL |
+| Gestor de paquetes | npm |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Estructura del proyecto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+Taller#3 Completo/
+├── Backend/
+│   └── demo/          # Proyecto Spring Boot
+├── Frontend/
+│   └── mi-app/        # Proyecto React + Vite
+└── Base de Datos/
+    ├── DatabaseUser.sql
+    └── DatabaseProduct.sql
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Requisitos previos
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [Node.js](https://nodejs.org) v18+
+- [Java JDK](https://www.oracle.com/java/technologies/downloads/) 17+
+- [Maven](https://maven.apache.org/)
+- [MySQL](https://www.mysql.com/) 8.0+
+
+---
+
+## 🚀 Cómo correr el proyecto
+
+### 1. Base de Datos
+
+1. Abre DBeaver o cualquier cliente MySQL
+2. Ejecuta los archivos en orden:
+   ```
+   Base de Datos/DatabaseUser.sql
+   Base de Datos/DatabaseProduct.sql
+   ```
+
+### 2. Backend
+
+Abre la carpeta `Backend/demo` en IntelliJ IDEA y corre la aplicación, o desde la terminal:
+
+```bash
+cd Backend/demo
+mvn spring-boot:run
 ```
+
+El backend corre en `http://localhost:8080`
+
+### 3. Frontend
+
+```bash
+cd Frontend/mi-app
+npm install
+npm run dev
+```
+
+El frontend corre en `http://localhost:5173`
+
+---
+
+## 📌 Endpoints principales
+
+| Método | Endpoint | Descripción |
+|--------|----------|-------------|
+| GET | `/api/users` | Obtener todos los usuarios |
+| GET | `/api/products` | Obtener todos los productos |
+
+---
+
+## 👤 Autor
+
+**Sebas763** — [GitHub](https://github.com/Sebas763)
