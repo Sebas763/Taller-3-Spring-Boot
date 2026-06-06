@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #000000;
+  color: white;
+}
+
+/* página */
+.page {
+  padding: 40px 20px;
+}
+
+/* título */
+h1 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 35px;
+  color: #ffffff;
+}
+
+/* grid de productos */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 🧱 CARD */
+.card {
+  background: #111111;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.25s ease;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.9);
+  border-color: rgba(255,255,255,0.2);
+}
+
+/* 🖼️ “IMAGEN DE PRODUCTO” SIMULADA */
+.image {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
+  color: white;
+
+  background: radial-gradient(circle at top,
+    #1f1f1f,
+    #0a0a0a
+  );
+
+  position: relative;
+}
+
+/* efecto brillo */
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.05), transparent);
+}
+
+/* nombre */
+.name {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 10px 5px;
+}
+
+/* precio */
+.price {
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4ade80;
+  padding-bottom: 14px;
+}
+
+.price span {
+  margin-right: 6px;
+}
+
+/* hover efecto glow */
+.card:hover .image {
+  background: radial-gradient(circle at top, #2a2a2a, #000);
+}
